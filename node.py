@@ -55,9 +55,9 @@ class Node(): # 每个节点的信息
         current_node = self
         while is_terminal(current_node.board) == None:
             if current_node.position:
-                return current_node.node_expand()
+                return current_node.node_expand() # 先探索
             else:
-                current_node = current_node.best_child()
+                current_node = current_node.best_child() # 探索完毕进行返回UCB最大的
                 return current_node
         return current_node
 
